@@ -1,5 +1,5 @@
 # BelowTheRuins
  
-# Versions
-## GitHub Release: 1.1
-## Local: 1.3
+## Versions
+### GitHub Release: 1.1
+### Local: 1.3
