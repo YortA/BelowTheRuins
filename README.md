@@ -1,8 +1,4 @@
 # BelowTheRuins
- 
-## Versions
-### GitHub Release: .4
-### Local: .5
 
 ## Images
 Menu
@@ -22,3 +18,7 @@ In-Game
 ## Temporary Art Assets
  - [Character](https://rvros.itch.io/animated-pixel-hero)
  - [Dungeon](https://szadiart.itch.io/rogue-fantasy-catacombs)
+
+## Versions
+### GitHub Release: .4
+### Local: .5
