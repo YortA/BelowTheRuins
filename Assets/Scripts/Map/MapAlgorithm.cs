@@ -21,18 +21,37 @@ public static class MapAlgorithm
 		while(roomQue.Count > 0)
 		{
 			var room = roomQue.Dequeue();   // release our room
-			if (room.size.x >= width * 2)
+			if(Random.value < 0.5f)
 			{
-				SplitX(height, roomQue, room);
+				if (room.size.y >= height * 2)
+				{
+					SplitY(width, roomQue, room);
+				}
+				else if (room.size.x >= width * 2)
+				{
+					SplitX(height, roomQue, room);
+				}
+				else if (room.size.x >= width && room.size.y >= height)
+				{
+					roomList.Add(room);     // once wer're satisfied, add a room to our list
+				}
 			}
-			else if (room.size.y >= height * 2)
+			else
 			{
-				SplitY(width, roomQue, room);
+				if (room.size.x >= width * 2)
+				{
+					SplitX(height, roomQue, room);
+				}
+				else if (room.size.y >= height * 2)
+				{
+					SplitY(width, roomQue, room);
+				}
+				else if (room.size.x >= width && room.size.y >= height)
+				{
+					roomList.Add(room);     // once wer're satisfied, add a room to our list
+				}
 			}
-			else if (room.size.x >= width && room.size.y >= height)
-			{
-				roomList.Add(room);		// once wer're satisfied, add a room to our list
-			}
+			
 		}
 		Debug.Log("Finished getting room sizes.");
 		return roomList;		// pass our room list tile bounds to be generated
@@ -41,7 +60,7 @@ public static class MapAlgorithm
 	// vertical split
 	private static void SplitX(int width, Queue<BoundsInt> roomQue, BoundsInt room)
 	{
-		var split = Random.Range(1, room.size.x);
+		var split = Random.Range(1 / width, room.size.x);
 		BoundsInt firstRoom = new BoundsInt(room.min, new Vector3Int(split, room.size.y, room.size.z));
 		BoundsInt secondRoom = new BoundsInt
 			(new Vector3Int(room.min.x + split, room.min.y, room.min.z), new Vector3Int(room.size.x - split, room.size.y, room.size.z));
@@ -54,7 +73,7 @@ public static class MapAlgorithm
 	// horizontal split
 	private static void SplitY(int height, Queue<BoundsInt> roomQue, BoundsInt room)
 	{
-		var split = Random.Range(1, room.size.y);
+		var split = Random.Range(1 / height, room.size.y);
 		BoundsInt firstRoom = new BoundsInt(room.min, new Vector3Int(room.size.x, split, room.size.z));
 		BoundsInt secondRoom = new BoundsInt
 			(new Vector3Int(room.min.x, room.min.y + split, room.min.z), new Vector3Int(room.size.x, room.size.y - split, room.size.z));

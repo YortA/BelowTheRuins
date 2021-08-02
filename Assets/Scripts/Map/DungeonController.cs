@@ -7,7 +7,10 @@ public abstract class DungeonController : MonoBehaviour
     [SerializeField]
     protected TileManager tileManager = null;
     [SerializeField]
+    protected PlayerAttributes playerAttributes;
+    [SerializeField]
     protected Vector2Int startPos = Vector2Int.zero;
+
 
     public void GenerateDungeon()
     {

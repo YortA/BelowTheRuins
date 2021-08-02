@@ -6,19 +6,22 @@ using UnityEngine.Tilemaps;
 
 public class TileManager : MonoBehaviour
 {
+	// get our tile map
     [SerializeField]
-    private Tilemap groundTileMap;
-    [SerializeField]
-    private TileBase groundTile;    // choose our specific tile
+    private Tilemap groundTileMap, wallTileMap;
+	// choose our specific tile
+	[SerializeField]
+    private TileBase groundTile, wallTile;
 
 	public void GenerateTiles(IEnumerable<Vector2Int> groundPos)
 	{
-		Debug.Log("GenerateTiles");
+		//Debug.Log("GenerateTiles");
 		CreateTiles(groundPos, groundTileMap, groundTile);
 	}
 	public void ClearTiles()
 	{
 		groundTileMap.ClearAllTiles();
+		wallTileMap.ClearAllTiles();
 	}
 
 	private void CreateTiles(IEnumerable<Vector2Int> groundPos, Tilemap groundTileMap, TileBase groundTile)
@@ -32,6 +35,12 @@ public class TileManager : MonoBehaviour
 	{
 		var tilePos = groundTileMap.WorldToCell((Vector3Int)position);
 		groundTileMap.SetTile(tilePos, groundTile);
-		Debug.Log("CreateSingleTile");
+		//Debug.Log("CreateSingleTile");
 	}
+
+	public void CreateSingleWall(Vector2Int position)
+	{
+		CreateSingleTile(position, wallTileMap, wallTile);
+	}
+
 }
