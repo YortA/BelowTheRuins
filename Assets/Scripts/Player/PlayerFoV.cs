@@ -4,17 +4,4 @@ using UnityEngine;
 
 public class PlayerFoV : MonoBehaviour
 {
-	/*
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
-
-	private void Start()
-	{
-		
-	}
 }

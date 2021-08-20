@@ -7,13 +7,7 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
 	[SerializeField]
-    DungeonGenerator dungeonGenerator = null;
-
-
-
-	public string playerName;
-	//public GameObject inputField;
-
+    private DungeonGenerator dungeonGenerator = null;
 
 	public void SaveName()
 	{

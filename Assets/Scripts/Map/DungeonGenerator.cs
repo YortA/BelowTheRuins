@@ -51,6 +51,7 @@ public class DungeonGenerator : DungeonController
 		playerAttributes.CenterSpawn(roomList);		// player
 	}
 
+	// connect our rooms by finding the nearest location and the center point
 	private HashSet<Vector2Int> ConnectRooms(List<Vector2Int> roomCenter)
 	{
 		HashSet<Vector2Int> hallways = new HashSet<Vector2Int>();
@@ -68,6 +69,7 @@ public class DungeonGenerator : DungeonController
 		return hallways;
 	}
 
+	// see MapAlgorithm.cs for breakdown
 	private HashSet<Vector2Int> CreateHallway(Vector2Int currentCenter, Vector2Int location)
 	{
 		HashSet<Vector2Int> hallway = new HashSet<Vector2Int>();
@@ -126,9 +128,10 @@ public class DungeonGenerator : DungeonController
 	//private HashSet<Vector2Int> CreateHallway();
 
 
+	// pass our tile boundsint roomlist and create the rooms passed by the x and y split
 	private HashSet<Vector2Int> CreateRooms(List<BoundsInt> roomList)
 	{
-		Debug.Log("CreateRooms");
+		//Debug.Log("CreateRooms");
 		HashSet<Vector2Int> ground = new HashSet<Vector2Int>();
 
 		foreach(var room in roomList)

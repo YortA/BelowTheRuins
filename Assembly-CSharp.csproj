@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Inputs\PlayerInputsActions.cs" />
+    <Compile Include="Assets\Scripts\Serialization\Manager\Vector3Helper.cs" />
     <Compile Include="Assets\Scripts\Map\TileManager.cs" />
     <Compile Include="Assets\Scripts\Map\MapAlgorithm.cs" />
     <Compile Include="Assets\Scripts\Entities\Attributes.cs" />
@@ -65,12 +66,19 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovementController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerFoV.cs" />
+    <Compile Include="Assets\Scripts\Serialization\SaveData.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Map\DungeonController.cs" />
-    <Compile Include="Assets\Scripts\Map\WallManager.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\Main Menu\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_PlayerName.cs" />
+    <Compile Include="Assets\Scripts\Map\WallManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttributes.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCamera.cs" />
+    <Compile Include="Assets\Scripts\Serialization\Manager\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_PlayerName.cs" />
+    <Compile Include="Assets\Scripts\Serialization\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

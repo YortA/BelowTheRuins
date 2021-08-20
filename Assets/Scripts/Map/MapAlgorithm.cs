@@ -11,7 +11,8 @@ using Random = UnityEngine.Random;
  */
 public static class MapAlgorithm
 {
-	//public
+	// Creates our list of tiles.
+	// Pass the total size, wdith, and height of our dungeon we want to generate
 	public static List<BoundsInt> BSP(BoundsInt space, int width, int height)
 	{
 		Queue<BoundsInt> roomQue = new Queue<BoundsInt>();
@@ -67,7 +68,7 @@ public static class MapAlgorithm
 
 		roomQue.Enqueue(firstRoom);
 		roomQue.Enqueue(secondRoom);
-		Debug.Log("SplitX");
+		//Debug.Log("SplitX");
 	}
 
 	// horizontal split
@@ -80,6 +81,6 @@ public static class MapAlgorithm
 
 		roomQue.Enqueue(firstRoom);
 		roomQue.Enqueue(secondRoom);
-		Debug.Log("SplitY");
+		//Debug.Log("SplitY");
 	}
 }

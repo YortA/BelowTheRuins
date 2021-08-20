@@ -9,13 +9,9 @@ public class PlayerMovementController : MonoBehaviour
     private InputAction movement;
     private Vector2 moveVector;
 
-
     public Rigidbody2D rb2d;
-    public Animator animator;
-
+    public Animator animator;       // change later
     private float speed = 5f;       // serialize later
-
-
 
     private void Awake()
 	{
@@ -35,12 +31,6 @@ public class PlayerMovementController : MonoBehaviour
 	{
         movement.Disable(); // ends our event
 	}
-
-	// Update is called once per frame
-	void Update()
-    {
-
-    }
 
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html
     // this is designed to execute physics related executions, we want to call this function so

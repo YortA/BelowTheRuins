@@ -6,24 +6,28 @@ using System.Linq;		// HashSet.ElementAt fn
 
 public class PlayerAttributes : Attributes		// inherit from attributes
 {
+	public PlayerData playerData;
 	public string playerName;
-	protected Vector2Int startPos = Vector2Int.zero;	// start pos @ 0,0
+	public Vector2Int startPos;
 
 	private void Awake()
 	{
 		//transform.position = (Vector3Int)startPos;
 		//playerName = gamemanager playernames
+		startPos = Vector2Int.zero; // start pos @ 0,0
 	}
-	
-	// we only need to call this class from our dungeon generator script to get our starting pos
-	//public void SelectSpawn(HashSet<Vector2Int> groundPos)
-	//{
-	//	var randomTile = Random.Range(0, groundPos.Count);                  // get a random element
-	//	var location = (Vector3Int)groundPos.ElementAt(randomTile);
-	//	//transform.position = new Vector3(location.x, location.y, location.z);
-	//	transform.position = location;	// cast as Vector3Int (for pos) and assign our new position
-	//	Debug.Log("POS: " + transform.position);
-	//}
+
+	private void Start()
+	{
+		playerData.health = health;
+		playerData.position = transform.position;
+	}
+
+	private void Update()
+	{
+		playerData.health = health;
+		playerData.position = transform.position;
+	}
 
 	public void CenterSpawn(List<BoundsInt> groundPos)
 	{
@@ -40,4 +44,16 @@ public class PlayerAttributes : Attributes		// inherit from attributes
 		// play animations
 		// pause game
 	}
+
+	// ###### DEPRECATED ######
+
+	// we only need to call this class from our dungeon generator script to get our starting pos
+	//public void SelectSpawn(HashSet<Vector2Int> groundPos)
+	//{
+	//	var randomTile = Random.Range(0, groundPos.Count);                  // get a random element
+	//	var location = (Vector3Int)groundPos.ElementAt(randomTile);
+	//	//transform.position = new Vector3(location.x, location.y, location.z);
+	//	transform.position = location;	// cast as Vector3Int (for pos) and assign our new position
+	//	Debug.Log("POS: " + transform.position);
+	//}
 }

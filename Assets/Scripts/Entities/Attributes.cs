@@ -51,6 +51,6 @@ public class Attributes : MonoBehaviour
 	// override our dying function (especially for PlayerAttributes.cs)
 	public virtual void ActorDied()
 	{
-
+		//banana
 	}
 }
